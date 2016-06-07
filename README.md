@@ -55,3 +55,8 @@ mysql> CREATE USER [CLOUDSQL_USER]@'cloudsqlproxy~%';
 mysql> CREATE DATABASE [CLOUDSQL_DB];
 mysql> GRANT ALL PRIVILEGES ON [CLOUDSQL_DB].* TO '[CLOUDSQL_USER]'@'cloudsqlproxy~%';
 ```
+
+If you want to import your database instead of running a clean install of your application:
+```
+mysql -h [CLOUDSQL-INSTANCE_IP] -u root -p < [DUMPFILE]
+```
