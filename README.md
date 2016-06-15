@@ -64,5 +64,5 @@ mysql -h [CLOUDSQL-INSTANCE_IP] -u root -p < [DUMPFILE]
 ## Setting up your shared file storage using Google Cloud Storage.
 Create the bucket 
 ```
-gsutil mb [STORAGE_BUCKET]
+gsutil mb -l [REGION] gs://[STORAGE_BUCKET]
 ````
