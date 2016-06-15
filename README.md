@@ -26,7 +26,7 @@ In this article we start with the default db-n1-standard-1 which is upgradable t
 
 Create your SQL Instance:
 ```
-gcloud sql instances create [CLOUDSQL_INSTANCE_NAME[ --tier=[TIER] --activation-policy=ALWAYS --authorized-networks=[IP] --region [REGION] --gce-zone [ZONE] --backup --backup-time [HH:MM] --enable-bin-log --database-flags innodb_file_per_table=1
+gcloud sql instances create [CLOUDSQL_INSTANCE_NAME] --tier=[TIER] --activation-policy=ALWAYS --authorized-networks=[IP] --region [REGION] --gce-zone [ZONE] --backup --backup-time [HH:MM] --enable-bin-log --database-flags innodb_file_per_table=1
 ```
 
 Set the root password:
@@ -60,3 +60,9 @@ If you want to import your database instead of running a clean install of your a
 ```
 mysql -h [CLOUDSQL-INSTANCE_IP] -u root -p < [DUMPFILE]
 ```
+
+## Setting up your shared file storage using Google Cloud Storage.
+Create the bucket 
+```
+gsutil mb [STORAGE_BUCKET]
+````
